@@ -1,0 +1,391 @@
+/* 🎯===============================
+   🎨 إعداد الألوان العامة
+===================================*/
+:root {
+  --bg: #0b2036;       /* أزرق غامق للخلفية */
+  --card: #0e2a45;     /* رمادي مزرق لصناديق المحتوى */
+  --accent: #2196f3;   /* أزرق فاتح للعناصر المميزة */
+  --muted: #9fb0c8;    /* لون ثانوي للنصوص الهادئة */
+  --text: #eaf6ff;     /* لون النص الأساسي */
+}
+
+/* ✳️===============================
+   الإعدادات العامة للعناصر
+===================================*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #071428);
+  color: var(--text);
+}
+
+/* 🧱===============================
+   الحاوية العامة للمحتوى
+===================================*/
+.container {
+  max-width: 1000px;
+  margin: 0px auto;
+}
+
+/* 🧑‍🏫===============================
+   رأس الصفحة (Header)
+===================================*/
+.site-header {
+  background: var(--card);
+  padding: 20px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0px 15px rgba(0,0,0,0.3);
+  /* height: 100vh; */
+}
+
+/* 🖼️ صورة المدرّس */
+.teacher-avatar {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.08);
+  /* margin-top: 40px; */
+  transition: transform 0.3s ease;
+}
+
+.teacher-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(13, 187, 172, 0.6);
+}
+
+/* 🧾===============================
+   العناوين والنبذة التعريفية
+===================================*/
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1px;
+  color: var(--accent);
+}
+
+.bio {
+  color: var(--muted);
+  margin: 1px auto;
+  max-width: 750px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+.form-page input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+
+/* 🌐===============================
+   روابط التواصل الاجتماعي
+===================================*/
+.socials {
+  margin-top: 18px;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: var(--accent);
+}
+
+/* 🔘===============================
+   الأزرار والإجراءات العامة
+===================================*/
+.actions {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 22px;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #1465ac;
+}
+
+.note {
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* 🧮===============================
+   صفحة إدخال البيانات (Form Page)
+===================================*/
+
+.form-page {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.form-page input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 18px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  color: var(--text);
+  outline: none;
+}
+
+/* ⏱️===============================
+   رأس الامتحان (Exam Header)
+===================================*/
+.exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.timer {
+  font-weight: 700;
+}
+
+/* ❓===============================
+   تنسيق السؤال والاختيارات
+===================================*/
+.question {
+  background: #072235;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.options {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+/* 🏁===============================
+   صفحة النتيجة (Result Page)
+===================================*/
+.result-box {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.result-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-page .btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.result-page h2 {
+  text-align: center;
+}
+
+/* 🧩===============================
+   صفحة الامتحان (Exam Page)
+===================================*/
+.exam-page {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* 🎓 رأس صفحة الامتحان */
+.exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #092541;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.exam-header h2 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.exam-header #studentInfo {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.timer {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* 🧠 تنسيق السؤال داخل الامتحان */
+.question {
+  background: #082a4a;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.question:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+.q-head {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+/* 🧾 خيارات الإجابة */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.options label {
+  background: rgba(255,255,255,0.05);
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.options label:hover {
+  background: rgba(33,150,243,0.2);
+  transform: translateX(-3px);
+}
+
+.options input[type="radio"] {
+  margin-left: 8px;
+  accent-color: var(--accent);
+}
+
+/* 📤 زر تسليم الامتحان */
+.exam-actions {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.exam-actions .btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: var(--accent);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.exam-actions .btn:hover {
+  background: #1e88e5;
+  transform: scale(1.05);
+}
+
+/* ⚙️===============================
+   صفحة التحميل (Loading Screen)
+===================================*/
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, var(--bg), #071428);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* 🔵 الدائرة المتحركة */
+.loading-spinner {
+  width: 70px;
+  height: 70px;
+  border: 6px solid rgba(255,255,255,0.2);
+  border-top: 6px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ✨ نص التحميل */
+.loading-text {
+  margin-top: 18px;
+  color: var(--text);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  animation: fadeIn 1.5s infinite alternate;
+}
+
+/* 🔁 أنيميشنات */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* عند انتهاء التحميل */
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-page, .exam-page, .result-box {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+.btn {
+  background: linear-gradient(135deg, var(--accent), #1769aa);
+  transition: .5s all ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #1e88e5, #09141d);
+  transform: translateY(-2px);
+}
+
+

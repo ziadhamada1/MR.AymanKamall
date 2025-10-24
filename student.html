@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أدخل بياناتك - الاختبار</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container form-page ">
+<h2>ادخل اسمك ورقم الهاتف لبدء الاختبار</h2>
+<form id="studentForm">
+<label for="name">الاسم:</label>
+<input id="name" name="name" required placeholder="مثال: ايمن كمال">
+
+
+<label for="phone">رقم الهاتف:</label>
+<input id="phone" name="phone" required placeholder="مثال: 01012345678">
+
+
+<button type="submit" class="btn">ابدأ الاختبار</button>
+</form>
+</main>
+
+
+<script>const form = document.getElementById('studentForm');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+
+  // ✅ التحقق من الاسم (لا يحتوي على رموز أو ألفاظ خارجة)
+  const badWords = ["غبي","كلب","حمار","سخيف","تافه","fuck","shit"]; // يمكن إضافة ألفاظ أخرى
+  const nameRegex = /^[\u0600-\u06FF\s]{2,30}$/; // حروف عربية ومسافة فقط
+  
+  if (!nameRegex.test(name) || badWords.some(w => name.includes(w))) {
+    return alert("⚠️ من فضلك أدخل اسمًا حقيقيًا بدون رموز أو ألفاظ خارجة.");
+  }
+
+  // ✅ التحقق من رقم الهاتف
+  const phoneRegex = /^(010|011|012|015)\d{8}$/;
+  if (!phoneRegex.test(phone)) {
+    return alert("⚠️ رقم الهاتف غير صحيح. يجب أن يبدأ بـ 010 أو 011 أو 012 أو 015 ويتكون من 11 رقمًا.");
+  }
+
+  // ✅ حفظ البيانات مؤقتًا
+  sessionStorage.setItem('student_name', name);
+  sessionStorage.setItem('student_phone', phone);
+
+  // ✅ الانتقال للصفحة التالية
+  window.location.href = 'exam.html';
+});
+</script>
+<!-- ✅ صفحة التحميل -->
+ <div class="loading-screen" id="loadingScreen">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">جارٍ التحميل...</div>
+</div>
+
+<script>
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loadingScreen');
+  setTimeout(() => {
+    loader.classList.add('fade-out');
+  }, 800); // ⏱️ ثانية واحدة فقط قبل الاختفاء
+});
+</script>
+
+
+</body>
+</html>

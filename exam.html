@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الاختبار - 30 سؤال</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container exam-page">
+<header class="exam-header">
+<div>
+<h2>اختبار التقييم — 30 سؤال</h2>
+<p id="studentInfo"></p>
+</div>
+<div class="timer">الوقت المتبقي: <span id="timer">30:00</span></div>
+</header>
+
+
+<form id="examForm"></form>
+
+
+<div class="exam-actions">
+<button id="submitBtn" class="btn">سلم الاختبار</button>
+</div>
+</main>
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">جارٍ التحميل...</div>
+</div>
+
+<script>
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loadingScreen');
+  setTimeout(() => {
+    loader.classList.add('fade-out');
+  }, 800); // ⏱️ ثانية واحدة فقط قبل الاختفاء
+});
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
